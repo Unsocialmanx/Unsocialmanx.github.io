@@ -1,0 +1,44 @@
+body {
+     background-color: olive;
+     width: 800px;
+     margin-left: 200px;
+}
+div1 {
+    float:left;
+    margin-bottom:20px;
+    width: 10%;
+    height: 30px;
+}
+h1 {
+    float:left;
+    margin-right:10px;
+    font-size: 24px;
+    color:beige;
+}
+div3 {
+    1px solid green;
+    clear:both;
+}
+article1 {
+}
+h2 {
+    color: beige;
+    border-style: double;
+    border-width: 5px;
+    border-color: black;
+    padding: 50px
+    margin: 20px
+    text-align: left;
+}
+dt {
+     color:black;
+}
+.footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: brown;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

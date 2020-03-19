@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dice Roll</title>
+</head>
+
+<body>
+    
+    
+<img src="images/start1.png" id="mydice1">
+
+<img src="images/start2.png" id="mydice2">
+
+<div>
+    <button id = "kms">Click here to play</button>
+</div>
+
+<p>Your score is:</p>
+<p id = "score">0</p>
+<p id = "round">You haven't played yet</p>
+<script>
+
+var button = document.getElementById("kms")
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * 6) + 1;
+    }
+
+var totalScore = 0;
+
+function playgame(){
+
+    var d1 = getRndInteger(1,6);
+    var d2 = getRndInteger(1,6);
+
+    //create the array
+    var diceFace=new Array("images/d1.png", "images/d2.png", "images/d3.png", "images/d4.png", "images/d5.png", "images/d6.png"); 
+
+    var dFile1 = diceFace[d1 - 1];
+    var dFile2 = diceFace[d2 - 1];
+    var imageName1=document.querySelector("#mydice1");
+    var imageName2=document.querySelector("#mydice2");
+    imageName1.src = dFile1;
+    imageName2.src = dFile2;
+
+    var total = d1 + d2;
+
+    if (total == 7 || total == 11){
+        totalScore += 1;
+         document.getElementById("score").innerHTML = totalScore;
+         document.getElementById("round").innerHTML = "You won that round!";
+    }
+    else if (total == 2){
+        totalScore -= 1;
+        document.getElementById("score").innerHTML = totalScore;
+        document.getElementById("round").innerHTML = "You are not good at this...";
+    }
+    else{
+        document.getElementById("round").innerHTML = "You neither won nor lost";
+    }
+    
+}
+
+
+button.addEventListener("click",playgame);
+</script>
+</body>
+    
+</html>
